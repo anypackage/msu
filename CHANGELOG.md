@@ -7,11 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2023-03-21
+## [0.1.0] - 2023-03-25
 
 ### Added
 
 - Initial release
 
-[Unreleased]: https://github.com/AnyPackage/AnyPackage.Scoop/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/AnyPackage/AnyPackage.Scoop/releases/tag/v0.1.0
+[Unreleased]: https://github.com/AnyPackage/AnyPackage.Msu/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/AnyPackage/AnyPackage.Msu/releases/tag/v0.1.0
