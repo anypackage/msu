@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="AnyPackage" Version="0.4.2" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" />
+    <PackageReference Include="System.Management" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
