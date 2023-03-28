@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net461</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <Copyright>© 2023 Thomas Nieto. All rights reserved.</Copyright>
@@ -9,8 +9,9 @@
 
   <ItemGroup>
     <PackageReference Include="AnyPackage" Version="0.4.2" />
+    <PackageReference Include="MSFTCompressionCab" Version="1.0.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" />
-    <PackageReference Include="System.Management" Version="7.0.0" />
+    <PackageReference Include="System.Management" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
