@@ -3,7 +3,6 @@
 // terms of the MIT license.
 
 using Microsoft.Deployment.Compression.Cab;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,16 +10,12 @@ using System.Management;
 
 namespace AnyPackage.Provider.Msu
 {
-    [PackageProvider("Msu")]
+    [PackageProvider("Msu", PackageByName = false, FileExtensions = new string[] { ".msu" })]
     public sealed class MsuProvider : PackageProvider, IFindPackage, IGetPackage
     {
-        private readonly static Guid s_id = new Guid("314633fe-c7e9-4eeb-824b-382a8a4e92b8");
-
-        public MsuProvider() : base(s_id) { }
-
         public void FindPackage(PackageRequest request)
         {
-            var file = new CabInfo(request.Name).GetFiles()
+            var file = new CabInfo(request.Path).GetFiles()
                                                 .Where(x => Path.GetExtension(x.Name) == ".txt")
                                                 .FirstOrDefault();
 
@@ -30,7 +25,7 @@ namespace AnyPackage.Provider.Msu
             }
 
             string line;
-            Dictionary<string, string> metadata = new Dictionary<string, string>();
+            Dictionary<string, object> metadata = new Dictionary<string, object>();
             using var reader = file.OpenText();
 
             while ((line = reader.ReadLine()) is not null)
@@ -47,10 +42,9 @@ namespace AnyPackage.Provider.Msu
             if (metadata.ContainsKey("KBArticleNumber"))
             {
                 var kb = string.Format("KB{0}", metadata["KBArticleNumber"]);
-                request.WritePackage(kb,
-                                     new PackageVersion("0"),
-                                     metadata["PackageType"],
-                                     request.NewSourceInfo(request.Name, request.Name));
+                var source = new PackageSourceInfo(request.Path, request.Path, ProviderInfo);
+                var package = new PackageInfo(kb, null, source, (string)metadata["PackageType"], null, metadata, ProviderInfo);
+                request.WritePackage(package);
             }
         }
 
@@ -62,9 +56,8 @@ namespace AnyPackage.Provider.Msu
             {
                 if (request.IsMatch((string)hotFix["HotFixID"]))
                 {
-                    request.WritePackage((string)hotFix["HotFixID"],
-                                         new PackageVersion("0"),
-                                         (string)hotFix["Description"]);
+                    var package = new PackageInfo((string)hotFix["HotFixID"], null, (string)hotFix["Description"], ProviderInfo);
+                    request.WritePackage(package);
                 }
             }
         }
