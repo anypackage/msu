@@ -30,7 +30,7 @@ namespace AnyPackage.Provider.Msu
 
             while ((line = reader.ReadLine()) is not null)
             {
-                var values = line.Split('=');
+                var values = line.Split(new char[] { '=' }, 2);
                 var key = values[0].Replace(" ", "");
 
                 // Remove quotes around value
