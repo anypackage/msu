@@ -4,6 +4,7 @@
 
 using Microsoft.Deployment.Compression.Cab;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Management;
 
@@ -15,7 +16,7 @@ namespace AnyPackage.Provider.Msu
         public void FindPackage(PackageRequest request)
         {
             var file = new CabInfo(request.Path).GetFiles()
-                                                .Where(x => x.Extension == ".txt")
+                                                .Where(x => Path.GetExtension(x.Name) == ".txt")
                                                 .FirstOrDefault();
 
             if (file is null)
