@@ -1,6 +1,6 @@
 @{
     RootModule = 'MsuProvider.dll'
-    ModuleVersion = '0.2.1'
+    ModuleVersion = '0.2.2'
     CompatiblePSEditions = @('Desktop', 'Core')
     GUID = '758cc272-d0a4-49e5-9a24-7d9e730f60e1'
     Author = 'Thomas Nieto'
