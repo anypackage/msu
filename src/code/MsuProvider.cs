@@ -54,7 +54,7 @@ namespace AnyPackage.Provider.Msu
 
             foreach (var hotFix in quickFix.Get())
             {
-                if (request.IsMatch((string)hotFix["HotFixID"]))
+                if (request.IsMatch((string)hotFix["HotFixID"]) && (request.Version is null || request.Version.ToString() == "*"))
                 {
                     var package = new PackageInfo((string)hotFix["HotFixID"], null, (string)hotFix["Description"], ProviderInfo);
                     request.WritePackage(package);
