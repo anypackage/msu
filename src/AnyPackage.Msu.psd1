@@ -18,8 +18,8 @@
         }
         PSData = @{
             Tags = @('AnyPackage', 'Provider', 'MSU', 'Windows')
-            LicenseUri = 'https://github.com/AnyPackage/AnyPackage.Msu/blob/main/LICENSE'
-            ProjectUri = 'https://github.com/AnyPackage/AnyPackage.Msu'
+            LicenseUri = 'https://github.com/anypackage/msu/blob/main/LICENSE'
+            ProjectUri = 'https://github.com/anypackage/msu'
         }
     }
     HelpInfoURI = 'https://go.anypackage.dev/help'

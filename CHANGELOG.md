@@ -37,9 +37,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
-[Unreleased]: https://github.com/AnyPackage/AnyPackage.Msu/compare/v0.2.3...HEAD
-[0.2.3]: https://github.com/AnyPackage/AnyPackage.Msu/releases/tag/v0.2.3
-[0.2.2]: https://github.com/AnyPackage/AnyPackage.Msu/releases/tag/v0.2.2
-[0.2.1]: https://github.com/AnyPackage/AnyPackage.Msu/releases/tag/v0.2.1
-[0.2.0]: https://github.com/AnyPackage/AnyPackage.Msu/releases/tag/v0.2.0
-[0.1.0]: https://github.com/AnyPackage/AnyPackage.Msu/releases/tag/v0.1.0
+[Unreleased]: https://github.com/anypackage/msu/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/anypackage/msu/releases/tag/v0.2.3
+[0.2.2]: https://github.com/anypackage/msu/releases/tag/v0.2.2
+[0.2.1]: https://github.com/anypackage/msu/releases/tag/v0.2.1
+[0.2.0]: https://github.com/anypackage/msu/releases/tag/v0.2.0
+[0.1.0]: https://github.com/anypackage/msu/releases/tag/v0.1.0
