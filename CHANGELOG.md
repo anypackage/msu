@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2023-07-18
+
+# Added
+
+- Add Install-Package (#21)
+- Add Uninstall-Package (#21)
+
 ## [0.2.3] - 2023-04-17
 
 ### Fixed
@@ -37,7 +44,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
-[Unreleased]: https://github.com/anypackage/msu/compare/v0.2.3...HEAD
+[Unreleased]: https://github.com/anypackage/msu/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/anypackage/msu/releases/tag/v0.3.0
 [0.2.3]: https://github.com/anypackage/msu/releases/tag/v0.2.3
 [0.2.2]: https://github.com/anypackage/msu/releases/tag/v0.2.2
 [0.2.1]: https://github.com/anypackage/msu/releases/tag/v0.2.1
