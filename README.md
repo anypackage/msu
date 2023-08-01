@@ -1,6 +1,17 @@
 # AnyPackage.Msu
 
-AnyPackage.Msu is a Windows Msu provider for AnyPackage.
+[![gallery-image]][gallery-site]
+[![build-image]][build-site]
+[![cf-image]][cf-site]
+
+[gallery-image]: https://img.shields.io/powershellgallery/dt/AnyPackage.Msu
+[build-image]: https://img.shields.io/github/actions/workflow/status/anypackage/msu/ci.yml
+[cf-image]: https://img.shields.io/codefactor/grade/github/anypackage/msu
+[gallery-site]: https://www.powershellgallery.com/packages/AnyPackage.Msu
+[build-site]: https://github.com/anypackage/msu/actions/workflows/ci.yml
+[cf-site]: https://www.codefactor.io/repository/github/anypackage/msu
+
+`AnyPackage.Msu` is a Windows Msu provider for AnyPackage.
 
 ## Install AnyPackage.Msu
 
@@ -18,7 +29,7 @@ Import-Module AnyPackage.Msu
 
 ### Get list of installed packages
 
-```PowerShell
+```powerShell
 Get-Package -Name KB12456789
 ```
 
