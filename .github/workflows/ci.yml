@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: .NET Build
         run: dotnet build --configuration Release
@@ -31,7 +31,7 @@ jobs:
           Copy-Item @settings
 
       - name: Upload module
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: module
           path: ./module/
@@ -41,10 +41,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Download module
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: module
           path: C:\Users\runneradmin\Documents\PowerShell\Modules\AnyPackage.Msu\
@@ -64,10 +64,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Download module
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: module
           path: module
@@ -100,7 +100,7 @@ jobs:
           Set-AuthenticodeSignature @config
 
       - name: Upload module
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: module-signed
           path: ./module/
@@ -112,7 +112,7 @@ jobs:
     steps:
 
       - name: Download module
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: module-signed
           path: '~/.local/share/powershell/Modules/AnyPackage.Msu'
