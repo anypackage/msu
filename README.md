@@ -15,13 +15,13 @@
 
 ## Install AnyPackage.Msu
 
-```PowerShell
+```powershell
 Install-PSResource AnyPackage.Msu
 ```
 
 ## Import AnyPackage.Msu
 
-```PowerShell
+```powershell
 Import-Module AnyPackage.Msu
 ```
 
@@ -29,7 +29,7 @@ Import-Module AnyPackage.Msu
 
 ### Get list of installed packages
 
-```powerShell
+```powershell
 Get-Package -Name KB12456789
 ```
 
