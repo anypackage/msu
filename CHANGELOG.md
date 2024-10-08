@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning][semver].
 
 ## [Unreleased]
 
+## [0.3.1] - 2024-10-07
+
+### Fixed
+
+- Fix kb name check (#34)
+
 ## [0.3.0] - 2023-07-18
 
 ### Added
@@ -47,7 +53,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 - Initial release
 
-[Unreleased]: https://github.com/anypackage/msu/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/anypackage/msu/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/anypackage/msu/releases/tag/v0.3.1
 [0.3.0]: https://github.com/anypackage/msu/releases/tag/v0.3.0
 [0.2.3]: https://github.com/anypackage/msu/releases/tag/v0.2.3
 [0.2.2]: https://github.com/anypackage/msu/releases/tag/v0.2.2
