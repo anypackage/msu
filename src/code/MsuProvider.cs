@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Management;
 using System.Management.Automation;
+using System.Text.RegularExpressions;
 
 namespace AnyPackage.Provider.Msu;
 
@@ -28,7 +29,7 @@ public sealed class MsuProvider : PackageProvider, IFindPackage, IGetPackage, II
         }
 
         string line;
-        Dictionary<string, object> metadata = [];
+        Dictionary<string, object?> metadata = [];
         using var reader = file.OpenText();
 
         while ((line = reader.ReadLine()) is not null)
@@ -46,7 +47,7 @@ public sealed class MsuProvider : PackageProvider, IFindPackage, IGetPackage, II
         {
             var kb = string.Format("KB{0}", metadata["KBArticleNumber"]);
             var source = new PackageSourceInfo(request.Path, request.Path, ProviderInfo);
-            var package = new PackageInfo(kb, null, source, (string)metadata["PackageType"], null, metadata, ProviderInfo);
+            var package = new PackageInfo(kb, null, source, (string)metadata["PackageType"]!, null, metadata, ProviderInfo);
             request.WritePackage(package);
         }
     }
@@ -93,6 +94,18 @@ public sealed class MsuProvider : PackageProvider, IFindPackage, IGetPackage, II
 
     public void UninstallPackage(PackageRequest request)
     {
+        var regex = new Regex(@"KB\d+", RegexOptions.IgnoreCase);
+
+        if (!regex.Match(request.Name).Success)
+        {
+            return;
+        }
+
+        if (request.IsVersionFiltered)
+        {
+            return;
+        }
+
         using var process = new Process();
         process.StartInfo.FileName = "wusa.exe";
         var kb = request.Name.Replace("KB", "");

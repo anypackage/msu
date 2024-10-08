@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AnyPackage" Version="0.5.0" />
+    <PackageReference Include="AnyPackage" Version="0.7.0" />
     <PackageReference Include="MSFTCompressionCab" Version="1.0.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" />
     <PackageReference Include="System.Management" Version="6.0.0" />
