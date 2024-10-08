@@ -11,7 +11,7 @@ namespace AnyPackage.Provider.Msu;
 
 public sealed class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 {
-    private readonly Guid _id = new Guid("314633fe-c7e9-4eeb-824b-382a8a4e92b8");
+    private readonly Guid _id = new("314633fe-c7e9-4eeb-824b-382a8a4e92b8");
 
     public void OnImport()
     {

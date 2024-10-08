@@ -13,7 +13,7 @@ using System.Management.Automation;
 
 namespace AnyPackage.Provider.Msu;
 
-[PackageProvider("Msu", PackageByName = false, FileExtensions = new string[] { ".msu" })]
+[PackageProvider("Msu", PackageByName = false, FileExtensions = [".msu"])]
 public sealed class MsuProvider : PackageProvider, IFindPackage, IGetPackage, IInstallPackage, IUninstallPackage
 {
     public void FindPackage(PackageRequest request)
@@ -28,12 +28,12 @@ public sealed class MsuProvider : PackageProvider, IFindPackage, IGetPackage, II
         }
 
         string line;
-        Dictionary<string, object> metadata = new Dictionary<string, object>();
+        Dictionary<string, object> metadata = [];
         using var reader = file.OpenText();
 
         while ((line = reader.ReadLine()) is not null)
         {
-            var values = line.Split(new char[] { '=' }, 2);
+            var values = line.Split(['='], 2);
             var key = values[0].Replace(" ", "");
 
             // Remove quotes around value
