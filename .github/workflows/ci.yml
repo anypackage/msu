@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: .NET Build
-        run: dotnet build --configuration Release
+        run: dotnet publish --configuration Release
 
       - name: Create module
         run: |

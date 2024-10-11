@@ -1,16 +1,13 @@
-﻿// Copyright (c) Thomas Nieto - All Rights Reserved
+// Copyright (c) Thomas Nieto - All Rights Reserved
 // You may use, distribute and modify this code under the
 // terms of the MIT license.
 
-using Microsoft.Deployment.Compression.Cab;
-
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using System.Management;
 using System.Management.Automation;
 using System.Text.RegularExpressions;
+
+using WixToolset.Dtf.Compression.Cab;
 
 namespace AnyPackage.Provider.Msu;
 
