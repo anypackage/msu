@@ -51,11 +51,16 @@ public sealed class MsuProvider : PackageProvider, IFindPackage, IGetPackage, II
 
     public void GetPackage(PackageRequest request)
     {
+        if (request.IsVersionFiltered)
+        {
+            return;
+        }
+
         var quickFix = new ManagementObjectSearcher(@"root\cimv2", "select * from Win32_QuickFixEngineering");
 
         foreach (var hotFix in quickFix.Get())
         {
-            if (request.IsMatch((string)hotFix["HotFixID"]) && (request.Version is null || request.Version.ToString() == "*"))
+            if (request.IsMatch((string)hotFix["HotFixID"]))
             {
                 var package = new PackageInfo((string)hotFix["HotFixID"], null, (string)hotFix["Description"], ProviderInfo);
                 request.WritePackage(package);
